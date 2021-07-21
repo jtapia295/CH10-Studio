@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{549878BD-AA94-4900-8152-9326C7049E69}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/SkillsController.cs">
     <Files>
-      <File FileName="Controllers/SkillsController.cs" Line="52" Column="54" />
+      <File FileName="Controllers/SkillsController.cs" Line="50" Column="1" />
       <File FileName="Views/Skills/Index.cshtml" Line="4" Column="1" />
-      <File FileName="Views/Skills/Skills.cshtml" Line="15" Column="11" />
+      <File FileName="Views/Skills/Skills.cshtml" Line="10" Column="2" />
       <File FileName="Models/ErrorViewModel.cs" Line="9" Column="1" />
-      <File FileName="Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/HomeController.cs" Line="35" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +13,7 @@
           <Node name="SkillsTracker" expanded="True">
             <Node name="SkillsTracker" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="HomeController.cs" selected="True" />
+                <Node name="SkillsController.cs" selected="True" />
               </Node>
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
@@ -29,7 +29,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

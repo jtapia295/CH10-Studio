@@ -10,14 +10,9 @@ namespace SkillsTracker.Controllers
     {
 
         List<string> skillsToLearn = new List<string> {"C#","JavaScript","Python" };
-        public IActionResult Index()
-        {
-            return View();
-        }
 
-        
-        [HttpGet("/skills")]
-        public IActionResult Skills()
+        [Route("/skills")]
+        public IActionResult Index()
         {
             string html = $@"
             <h1> Skills Tracker </h1>
@@ -28,13 +23,22 @@ namespace SkillsTracker.Controllers
                 <li>{skillsToLearn[2]}</li>
             </ol >";
 
-            return Content(html,"text/html");
+            return Content(html, "text/html");
+            return View();
         }
 
+
         [HttpPost("/skills/form")]
-        public IActionResult Form(string date, string )
+        public IActionResult Form(string date, string skill1, string skill2, string skill3)
         {
-            return View();
+            string html = $@"
+            <h1>{date}</h1>
+            <ol >
+                <li>{skillsToLearn[0]}:{skill1}</li>
+                <li>{skillsToLearn[1]}:{skill2}</li>
+                <li>{skillsToLearn[2]}:{skill3}</li>
+            </ol >  ";
+            return Content(html,"text/html");
         }
 
 
@@ -42,30 +46,40 @@ namespace SkillsTracker.Controllers
         public IActionResult Formbuilder()
         {
             string html = $@"
-            <form method='post' action='/skills'>
-            <label name ='Date'><input type='date'/></label>
+            <form method='post' action='/skills/form'>
 
-            <label for='C'>{skillsToLearn[0]}</label>
-            <select name='{skillsToLearn[0]}' id='C'>
+            <label>Date:<input type='date'name ='date'/></label>
+            <br/>
+
+            <label for='C'>{skillsToLearn[0]}:</label><br/>
+
+            <select name='skill1' id='C'>
             <option value = 'Making Apps'> Making Apps </option>
             <option value = 'Master Coder'> Master Coder </option>
             <option value = 'Learning Basics'>Learning Basics</option>
+            </select>
+            <br/>
 
-            <label for='Java'>{skillsToLearn[1]}</label>
-            <select name='{skillsToLearn[1]}' id='Java'>
+            <label for='Java'>{skillsToLearn[1]}:</label><br/>
+            <select name='skill2' id='Java'>
             <option value = 'Making Apps'> Making Apps </option>
             <option value = 'Master Coder'> Master Coder </option>
             <option value = 'Learning Basics'>Learning Basics</option>
-            </select >
-
-            <label for='C'>{skillsToLearn[2]}</label>
-            <select name='{skillsToLearn[2]}' id='C'>
+            </select>
+            <br/>
+            <label for='Python'>{skillsToLearn[2]}:</label><br/>
+            <select name='skill3' id='Python'>
             <option value = 'Making Apps'> Making Apps </option>
             <option value = 'Master Coder'> Master Coder </option>
             <option value = 'Learning Basics'>Learning Basics</option>
-                                                " ;
+            </select>
+            <br/>
+            <input type='submit'value='Submit'>
+            </form>
 
-            return View();
+" ;
+            
+            return Content(html,"text/html");
         }
     }
 }
